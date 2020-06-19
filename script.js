@@ -1,8 +1,8 @@
 // vars
-var timeDate = document.querySelector(currentDay)
-var saveData = document.querySelector(saveMe)
+var tasks = [];
+var workHours =[8,9,10,11,12,1,2,3,4,5];
+// init ()
 
-var dayText = []
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
 // ✓ The application displays timeblocks for standard business hours (9 a.m. to 5 p.m.).
@@ -10,7 +10,25 @@ var dayText = []
 // *******moment.js***************
 
 
+init()
 
+function init() {
+    // Get stored tasks from localStorage
+    // Parsing the JSON string to an object
+    var storedTasks = JSON.parse(localStorage.getItem("tasks"))
+
+    if (storedTasks !== null) {
+        tasks = storedTasks;
+        
+}
+}
+// Saving Taks to Local Storage
+function storedTasks() {
+    // Stringify and set "tasks" key in localStorage to tasks array
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    
+    
+  }
 
 // Current Time Block
 $("#currentDay").text(moment().format('ddd MMM Do, YYYY'));
@@ -40,20 +58,28 @@ moment().format("YYYY-MM-DD HH:mm");
 // ✓ Clicking a time block's save button saves the input text to local storage, 
 // allowing the text to persist when the application is refreshed.
 // Local Storage
-function saveData() {
-  // Stringify and set "todos" key in localStorage to todos array
-  localStorage.setItem("todos", JSON.stringify(todos));
-}
 
-$("saveBtn").click(function(event){
-    localStorage.getItem("dayText", JSON.stringify(dayText));
-})
 
-$(".saveMe").on("click", function() {
-    alert("I've been clicked!");
+
+$(".saveMe").on("click", function(event) {
+    var prevVal = $(this).prev()[0].value;
+    // alert("I've been clicked!");
+    tasks.push(prevVal)
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    alert("I've been saved!");
+    console.log(prevVal);
+    console.log(tasks);
+    
+    
+    // storedTasks;
   });
 
 
+//   function init() {
+//     // Get stored todos from localStorage
+//     // Parsing the JSON string to an object
+//     var storedData = JSON.parse(localStorage.getItem("tasks"));
+//   }
 // WHEN I refresh the page
 // THEN the saved events persist
 // local storage
@@ -63,5 +89,4 @@ $(".saveMe").on("click", function() {
 
 
 
-// ✓ Repository contains quality README with description, screenshot, link to deployed application.
-// ```
+// ✓ Repository contains quality README with description, screenshot, link to deployed application
