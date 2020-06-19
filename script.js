@@ -1,6 +1,6 @@
 // vars
 var timeDate = document.querySelector(currentDay)
-console.log(timeDate);
+var saveData = document.querySelector(saveMe)
 
 var dayText = []
 // WHEN I open the planner
@@ -49,7 +49,7 @@ $("saveBtn").click(function(event){
     localStorage.getItem("dayText", JSON.stringify(dayText));
 })
 
-$("#click-me").on("click", function() {
+$(".saveMe").on("click", function() {
     alert("I've been clicked!");
   });
 
