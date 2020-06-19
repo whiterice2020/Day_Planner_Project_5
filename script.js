@@ -25,7 +25,7 @@ function init() {
 // Saving Taks to Local Storage
 function storedTasks() {
     // Stringify and set "tasks" key in localStorage to tasks array
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    // localStorage.setItem("tasks", JSON.stringify(tasks));
     
     
   }
@@ -66,9 +66,9 @@ $(".saveMe").on("click", function(event) {
     // alert("I've been clicked!");
     tasks.push(prevVal)
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    alert("I've been saved!");
-    console.log(prevVal);
-    console.log(tasks);
+    // alert("I've been saved!");
+    // console.log(prevVal);
+    // console.log(tasks);
     
     
     // storedTasks;
