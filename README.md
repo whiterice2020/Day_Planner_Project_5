@@ -17,3 +17,7 @@ When it is a past time, the row will be grey
 
 When it is a future time, the row will be green
 
+
+Nonfunctional Items
+Color Changing Rows based on current time
+Local Storage
