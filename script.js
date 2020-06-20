@@ -1,10 +1,7 @@
 // vars
 var tasks = [];
 var workHours =[8,9,10,11,12,1,2,3,4,5];
-var currentTime = 
 
-
-console.log(tasks);
 
 
 init()
@@ -42,15 +39,17 @@ function storedTasks() {
 
 // Current Time Block
 $("#currentDay").text(moment().format('ddd MMM Do, YYYY'));
-moment().format("YYYY-MM-DD HH:mm");
-
-// 12 hour current time
+moment().format("YYYY-MM-DD hh:mm");
 
 
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 // ✓ Each timeblock is color coded to indicate whether it is in a past, present, or future hour.
 
 // RowColorUpdate
+// var row = document.querySelector(".row");
+var currentTime = moment().hours();
+ 
+    
+  
 
 
 
