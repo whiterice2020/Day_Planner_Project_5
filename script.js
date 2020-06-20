@@ -39,7 +39,7 @@ function storedTasks() {
 
 // Current Time Block
 $("#currentDay").text(moment().format('ddd MMM Do, YYYY'));
-moment().format("YYYY-MM-DD hh:mm");
+moment().format("YYYY-MM-DD HH:mm");
 
 
 // ✓ Each timeblock is color coded to indicate whether it is in a past, present, or future hour.
@@ -47,10 +47,9 @@ moment().format("YYYY-MM-DD hh:mm");
 // RowColorUpdate
 // var row = document.querySelector(".row");
 var currentTime = moment().hours();
+// function
  
     
-  
-
 
 
 // Click event for save button which saves to local storage
@@ -66,20 +65,3 @@ $(".saveMe").on("click", function(event) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     console.log(tasks)
   });
-
-
-//   function init() {
-//     // Get stored todos from localStorage
-//     // Parsing the JSON string to an object
-//     var storedData = JSON.parse(localStorage.getItem("tasks"));
-//   }
-// WHEN I refresh the page
-// THEN the saved events persist
-// local storage
-
-
-
-
-
-
-// ✓ Repository contains quality README with description, screenshot, link to deployed application
