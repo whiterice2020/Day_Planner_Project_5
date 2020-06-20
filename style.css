@@ -5,11 +5,14 @@ body {
 }
 
 textarea{
-  background: transparent;
+  background: lightgreen;
   border: none;
   resize: none;
   color: #000000;
   border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
 }
 
@@ -69,3 +72,8 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.saveMe {
+  background:teal;
+}
+
