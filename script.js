@@ -1,26 +1,38 @@
 // vars
 var tasks = [];
 var workHours =[8,9,10,11,12,1,2,3,4,5];
-// init ()
+
 
 // WHEN I open the planner
 // THEN the current day is displayed at the top of the calendar
 // ✓ The application displays timeblocks for standard business hours (9 a.m. to 5 p.m.).
 // ✓ The current day is displayed at the top of the calendar.
 // *******moment.js***************
+console.log(tasks);
 
 
 init()
 
 function init() {
-    // Get stored tasks from localStorage
-    // Parsing the JSON string to an object
-    var storedTasks = JSON.parse(localStorage.getItem("tasks"))
+  // Get stored tasks from localStorage
+  // Parsing the JSON string to an object
+  var storedTasks = JSON.parse(localStorage.getItem("tasks"))
 
-    if (storedTasks !== null) {
-        tasks = storedTasks;
-        
-}
+  console.log("init with tasks:")
+  console.log(storedTasks) 
+
+  if (storedTasks !== null) {
+
+    tasks = storedTasks; 
+  }
+
+  task.forEach(function(task) {
+    // find the element with the id  of 'description-" + task id"
+
+    //update its value with task.description
+  });
+
+  //Go through each task. get the id from the task, update that description box with the task.
 }
 // Saving Taks to Local Storage
 function storedTasks() {
@@ -62,16 +74,16 @@ moment().format("YYYY-MM-DD HH:mm");
 
 
 $(".saveMe").on("click", function(event) {
-    var prevVal = $(this).prev()[0].value;
-    // alert("I've been clicked!");
-    tasks.push(prevVal)
+    var description = $(this).prev()[0].value;
+    var hour = $(this).attr('id');
+    console.log("hour" + hour);
+
+    var task = {}
+    task[hour] = description
+
+    tasks.push(task)
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    // alert("I've been saved!");
-    // console.log(prevVal);
-    // console.log(tasks);
-    
-    
-    // storedTasks;
+    console.log(tasks)
   });
 
 
